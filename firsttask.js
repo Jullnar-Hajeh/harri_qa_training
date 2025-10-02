@@ -5,22 +5,15 @@ const users = [
 { id: 4, name: 'Dana', age: 40, active: false },
 ];
 
-let userLength = users.length;
 let i ;
-
 function getActiveUsers(users)
 {
     const activeUsersName=users.filter(user => user.active).map (user=>user.name);
-    // for (i =0; i<userLength; i++){
-    //   if (users[i].active === true){
-    // activeUsersName.push(users[i].name);
-    //   }
-    // }
 return activeUsersName;
 }
 function  getAverageAge(users){
 let sumage = users.reduce((acc,user)=>acc+user.age,0) 
-    return sumage/userLength;
+    return sumage/users.length;
 }
 
 
@@ -29,7 +22,7 @@ function findUserById(users, id){
    if(user)
     return user;
    else 
-    return [];
+    return null;
 }
 
 
@@ -50,7 +43,7 @@ function sortUsersByAge(users, direction){
 function toggleUserActive(users, id){
  
         let toggleuser = findUserById(users ,id);
-        if (toggleuser.length === 0){
+        if (!toggleuser){
             console.log("we dont find the user with this id");
            return [];}
         else
@@ -61,10 +54,6 @@ function toggleUserActive(users, id){
             console.log(users);
             return users;
     }
-        // if (toggleuser.active == true)
-        //     toggleuser.active = false;
-        // else 
-        //     toggleuser.active = true;
     
 }
 
@@ -88,8 +77,8 @@ let avaregeAge = getAverageAge(users);
 console.log("Avarege age:");
 console.log(avaregeAge);
 
-let finduser = findUserById(users , 3);
-if (finduser.length == 0)
+let finduser = findUserById(users , 0);
+if (!finduser)
     console.log("there is no user with this id");
 else {
     console.log("we found the user :")
