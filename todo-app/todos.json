@@ -48,5 +48,30 @@
     "id": 12,
     "title": "Build a Node.js project",
     "completed": false
+  },
+  {
+    "id": 13,
+    "title": "Learn async/await in Node.js",
+    "completed": false
+  },
+  {
+    "id": 15,
+    "title": "Learn async/await in Node.js",
+    "completed": false
+  },
+  {
+    "id": 16,
+    "title": "Build a Node.js project",
+    "completed": false
+  },
+  {
+    "id": 17,
+    "title": "Learn async/await in Node.js",
+    "completed": false
+  },
+  {
+    "id": 18,
+    "title": "Build a Node.js project",
+    "completed": false
   }
 ]

@@ -6,8 +6,8 @@ async function run() {
 
   console.log(await todo.getTodos());
 
-  await todo.completeTodo(8);
-  await todo.deleteTodo(5);
+  await todo.completeTodo(0);
+  await todo.deleteTodo(14);
 
   console.log(await todo.getTodos());
 }
