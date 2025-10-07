@@ -28,7 +28,9 @@ const newTodo ={
 };
 todos.push(newTodo);
 await saveTodos(todos);}
-catch {console.log("erron in adding it");}
+catch (error) {
+  console.error("Error in adding it:", error);
+}
 }
 
 
@@ -44,9 +46,10 @@ async function completeTodo(id){
      todo.completed = true;
      await saveTodos(todos);
         
-    }catch{
-        console.log("error in completing it ")
-    }
+    }catch (error) {
+  console.error("Error in completing it:", error);
+}
+
 }
 
 async function deleteTodo(id) {
@@ -60,9 +63,10 @@ async function deleteTodo(id) {
 todos = todos.filter(todoItem => todoItem.id !== id);
   await saveTodos(todos);
         
-    }catch{
-        console.log('error in deleting it')
-    }
+    }catch (error) {
+  console.error("Error in deleting it:", error);
+}
+
     
 }
 

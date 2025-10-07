@@ -7,7 +7,7 @@
   {
     "id": 3,
     "title": "Learn async/await in Node.js",
-    "completed": false
+    "completed": true
   },
   {
     "id": 4,
@@ -55,11 +55,6 @@
     "completed": false
   },
   {
-    "id": 15,
-    "title": "Learn async/await in Node.js",
-    "completed": false
-  },
-  {
     "id": 16,
     "title": "Build a Node.js project",
     "completed": false
@@ -71,6 +66,26 @@
   },
   {
     "id": 18,
+    "title": "Build a Node.js project",
+    "completed": false
+  },
+  {
+    "id": 19,
+    "title": "Learn async/await in Node.js",
+    "completed": false
+  },
+  {
+    "id": 20,
+    "title": "Build a Node.js project",
+    "completed": false
+  },
+  {
+    "id": 21,
+    "title": "Learn async/await in Node.js",
+    "completed": false
+  },
+  {
+    "id": 22,
     "title": "Build a Node.js project",
     "completed": false
   }
