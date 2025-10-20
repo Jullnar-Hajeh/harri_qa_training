@@ -18,7 +18,9 @@ exports.config = {
     }
   },
   include: {
-    I: './steps_file.js'
+    I: './steps_file.js',
+    webTablesPage: './pages/webTablesPage.js'
+    
   },
   plugins: {
     htmlReporter: {

@@ -1,7 +1,6 @@
 const { I } = inject();
-
+const got = require('got');
 module.exports = {
-
   locators: {
     dynamicRow: (rowNumber) => `(//div[@class='rt-tr-group'])[${rowNumber}]`,
     firstNameCell: `//div[@class='rt-td'][1]`,
@@ -11,10 +10,11 @@ module.exports = {
     salaryCell: `//div[@class='rt-td'][5]`,
     departmentCell: `//div[@class='rt-td'][6]`,
   },
-
-  async extractUserDataFromRow(userId) {
+async goToPage() {
+    await I.amOnPage('/');
+  },
+async extractUserDataFromRow(userId) {
     const rowLocator = this.locators.dynamicRow(userId);
-
     const firstName = await I.grabTextFrom(rowLocator + this.locators.firstNameCell);
     const lastName = await I.grabTextFrom(rowLocator + this.locators.lastNameCell);
     const age = await I.grabTextFrom(rowLocator + this.locators.ageCell);
@@ -28,5 +28,15 @@ module.exports = {
       salary: salary,
       department: department,
     };
+  },
+
+   async getMergedUserData(userId, apiEndpoint) {
+    const userdata = await this.extractUserDataFromRow(userId);
+    const apiResponse = await got(apiEndpoint).json();
+    const cityapi = apiResponse.address.city;
+    userdata.address = {
+      city: cityapi
+    };
+    return userdata;
   }
 };
