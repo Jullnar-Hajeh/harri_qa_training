@@ -1,5 +1,7 @@
 const { I } = inject();
 const got = require('got');
+const config = require('config');
+const baseApiEndpoint = config.get('apiEndpoint');
 module.exports = {
   locators: {
     dynamicRow: (rowNumber) => `(//div[@class='rt-tr-group'])[${rowNumber}]`,
@@ -30,13 +32,12 @@ async extractUserDataFromRow(userId) {
     };
   },
 
-   async getMergedUserData(userId, apiEndpoint) {
-    const userdata = await this.extractUserDataFromRow(userId);
-    const apiResponse = await got(apiEndpoint).json();
-    const cityapi = apiResponse.address.city;
-    userdata.address = {
-      city: cityapi
+async getUserDataFromApi(userId) {
+    const fullApiEndpoint = `${baseApiEndpoint}/${userId}`;
+    const apiResponse = await got(fullApiEndpoint).json();
+    
+    return {
+        city: apiResponse.address.city
     };
-    return userdata;
   }
 };
