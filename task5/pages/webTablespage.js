@@ -13,7 +13,6 @@ module.exports = {
     departmentInput: `//input[@id='department']`,
     submitButton: `//button[@id='submit']`,
     dataRows: `//div[@class='rt-tbody']/div[@class='rt-tr-group' and not(contains(@style, 'display: none')) and not(.//div[contains(@class, '-padRow')])]`,
-    firstRowCells: `(//div[@class='rt-tr-group'])[1]//div[@class='rt-td']`,
     tableBody: `//div[@class='rt-tbody']`,
     userRowByEmail: (email) => `//div[@class='rt-tr-group' and .//div[text()='${email}']]`,
   },
