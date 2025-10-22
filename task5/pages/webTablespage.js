@@ -15,6 +15,7 @@ module.exports = {
     dataRows: `//div[@class='rt-tbody']/div[@class='rt-tr-group' and not(contains(@style, 'display: none')) and not(.//div[contains(@class, '-padRow')])]`,
     firstRowCells: `(//div[@class='rt-tr-group'])[1]//div[@class='rt-td']`,
     tableBody: `//div[@class='rt-tbody']`,
+    userRowByEmail: (email) => `//div[@class='rt-tr-group' and .//div[text()='${email}']]`,
   },
   
 
@@ -22,53 +23,50 @@ module.exports = {
     await I.amOnPage('/webtables');
   },
 
-  openRegistrationForm() {
-    I.click(this.locators.addButton);
+ async openRegistrationForm() {
+    await I.waitForVisible(this.locators.addButton, 5);
+    await I.click(this.locators.addButton);
   },
   
-  fillRegistrationForm(user) {
-    I.fillField(this.locators.firstNameInput, user.firstName);
-    I.fillField(this.locators.lastNameInput, user.lastName);
-    I.fillField(this.locators.emailInput, user.email);
-    I.fillField(this.locators.ageInput, user.age);
-    I.fillField(this.locators.salaryInput, user.salary);
-    I.fillField(this.locators.departmentInput, user.department);
+ async fillRegistrationForm(user) {
+    await I.fillField(this.locators.firstNameInput, user.firstName);
+    await I.fillField(this.locators.lastNameInput, user.lastName);
+    await I.fillField(this.locators.emailInput, user.email);
+    await I.fillField(this.locators.ageInput, user.age);
+    await I.fillField(this.locators.salaryInput, user.salary);
+    await I.fillField(this.locators.departmentInput, user.department);
   },
   
-  submitForm() {
-    I.click(this.locators.submitButton);
-  },
-
-
-  addUser(user) {
-    this.goToPage();
-    this.openRegistrationForm();
-    this.fillRegistrationForm(user);
-    this.submitForm();
+  async submitForm() {
+    await I.click(this.locators.submitButton);
   },
 
 
  
- 
-searchForUser(searchText) {
-    
-   I.fillField(this.locators.searchBox, searchText);
-    
+async searchForUser(searchText) {
+ await I.fillField(this.locators.searchBox, searchText);
 
-},
+await I.waitNumberOfVisibleElements(this.locators.dataRows, 1, 10); 
 
+    await I.waitForText(searchText, 5, this.locators.tableBody);
+   },
+   
 async countVisibleDataRows() {
+    await I.waitForElement(this.locators.dataRows, 10);
     return count = await I.grabNumberOfVisibleElements(this.locators.dataRows);
   },
 
-  async getFirstRowData() {
-    const firstName = await I.grabTextFrom(`${this.locators.firstRowCells}[1]`);
-    const lastName = await I.grabTextFrom(`${this.locators.firstRowCells}[2]`);
-    const age = await I.grabTextFrom(`${this.locators.firstRowCells}[3]`);
-    const email = await I.grabTextFrom(`${this.locators.firstRowCells}[4]`);
-    const salary = await I.grabTextFrom(`${this.locators.firstRowCells}[5]`);
-    const department = await I.grabTextFrom(`${this.locators.firstRowCells}[6]`);
+async getUserDataByEmail(email) {
+    const rowLocator = this.locators.userRowByEmail(email);
+    await I.waitForElement(rowLocator, 10);
+
+    const firstName = await I.grabTextFrom(`${rowLocator}//div[@class='rt-td'][1]`);
+    const lastName = await I.grabTextFrom(`${rowLocator}//div[@class='rt-td'][2]`);
+    const age = await I.grabTextFrom(`${rowLocator}//div[@class='rt-td'][3]`);
+    const userEmail = await I.grabTextFrom(`${rowLocator}//div[@class='rt-td'][4]`);
+    const salary = await I.grabTextFrom(`${rowLocator}//div[@class='rt-td'][5]`);
+    const department = await I.grabTextFrom(`${rowLocator}//div[@class='rt-td'][6]`);
     
-    return { firstName, lastName, age, email, salary, department };
+    return { firstName, lastName, age, email: userEmail, salary, department };
   }
 };

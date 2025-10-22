@@ -1,13 +1,38 @@
 const { faker } = require('@faker-js/faker');
+
+function getRandomFirstName() {
+    return faker.person.firstName();
+}
+
+function getRandomLastName() {
+    return faker.person.lastName();
+}
+
+function getRandomEmail() {
+    return faker.internet.email().toLowerCase();
+}
+
+function getRandomAge() {
+    return faker.number.int({ min: 20, max: 60 }).toString();
+}
+
+function getRandomSalary() {
+    return faker.number.int({ min: 1000 ,max:20000}).toString();
+}
+
+function getRandomDepartment() {
+    return faker.commerce.department();
+}
+
 module.exports = {
-  createNewUser() {
+  generateRandomUserData() {
     return {
-      firstName: faker.person.firstName(),
-      lastName: faker.person.lastName(),
-      email: faker.internet.email().toLowerCase(),
-      age: faker.number.int({ min: 20, max: 60 }).toString(),
-      salary: faker.number.int({ min: 1000 ,max:20000}).toString(),
-      department: faker.commerce.department()
+      firstName: getRandomFirstName(),
+      lastName: getRandomLastName(),
+      email: getRandomEmail(),
+      age: getRandomAge(),
+      salary: getRandomSalary(),
+      department: getRandomDepartment()
     };
   }
 };
