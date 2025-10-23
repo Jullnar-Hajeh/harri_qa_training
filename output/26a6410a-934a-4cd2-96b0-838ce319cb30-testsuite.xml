@@ -1,0 +1,201 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1761222419266' stop='1761222428837'>
+    <name>User Management:</name>
+    <title>User Management:</title>
+    <test-cases>
+        <test-case start='1761222419273' status='passed' stop='1761222428806'>
+            <name>Add a new user and search | {"firstName":"Maeve","lastName":"Lindgren","email":"daron26@hotmail.com","age":"24","salary":"12505","department":"Books"}</name>
+            <title>Add a new user and search | {"firstName":"Maeve","lastName":"Lindgren","email":"daron26@hotmail.com","age":"24","salary":"12505","department":"Books"}</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='codeceptjs'/>
+                <label name='tag' value='@hotmail'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1761222420841' status='passed' stop='1761222426282'>
+                    <name>On webTablesPage: go to page</name>
+                    <title>On webTablesPage: go to page</title>
+                    <attachments/>
+                    <steps>
+                        <step start='1761222420842' status='passed' stop='1761222426279'>
+                            <name>I am on page "/webtables"</name>
+                            <title>I am on page "/webtables"</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1761222426282' status='passed' stop='1761222426344'>
+                    <name>On webTablesPage: open registration form</name>
+                    <title>On webTablesPage: open registration form</title>
+                    <attachments/>
+                    <steps>
+                        <step start='1761222426282' status='passed' stop='1761222426343'>
+                            <name>I wait for visible "//button[@id='addNewRecordButton']", 5</name>
+                            <title>I wait for visible "//button[@id='addNewRecordButton']", 5</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1761222426344' status='passed' stop='1761222426471'>
+                    <name>I click "//button[@id='addNewRecordButton']"</name>
+                    <title>I click "//button[@id='addNewRecordButton']"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1761222426473' status='passed' stop='1761222426709'>
+                    <name>On webTablesPage: fill registration form {"firstName":"Maeve","lastName":"Lindgren","email":"daron26@hotmail.com","age":"24","salary":"12505","department":"Books"}</name>
+                    <title>On webTablesPage: fill registration form {"firstName":"Maeve","lastName":"Lindgren","email":"daron26@hotmail.com","age":"24","salary":"12505","department":"Books"}</title>
+                    <attachments/>
+                    <steps>
+                        <step start='1761222426473' status='passed' stop='1761222426708'>
+                            <name>I fill field "//input[@id='firstName']", "Maeve"</name>
+                            <title>I fill field "//input[@id='firstName']", "Maeve"</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1761222426709' status='passed' stop='1761222426879'>
+                    <name>I fill field "//input[@id='lastName']", "Lindgren"</name>
+                    <title>I fill field "//input[@id='lastName']", "Lindgren"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1761222426880' status='passed' stop='1761222427132'>
+                    <name>I fill field "//input[@id='userEmail']", "daron26@hotmail.com"</name>
+                    <title>I fill field "//input[@id='userEmail']", "daron26@hotmail.com"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1761222427133' status='passed' stop='1761222427241'>
+                    <name>I fill field "//input[@id='age']", "24"</name>
+                    <title>I fill field "//input[@id='age']", "24"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1761222427242' status='passed' stop='1761222427425'>
+                    <name>I fill field "//input[@id='salary']", "12505"</name>
+                    <title>I fill field "//input[@id='salary']", "12505"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1761222427426' status='passed' stop='1761222427664'>
+                    <name>I fill field "//input[@id='department']", "Books"</name>
+                    <title>I fill field "//input[@id='department']", "Books"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1761222427666' status='passed' stop='1761222427767'>
+                    <name>On webTablesPage: submit form</name>
+                    <title>On webTablesPage: submit form</title>
+                    <attachments/>
+                    <steps>
+                        <step start='1761222427666' status='passed' stop='1761222427766'>
+                            <name>I click "//button[@id='submit']"</name>
+                            <title>I click "//button[@id='submit']"</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1761222427767' status='passed' stop='1761222428545'>
+                    <name>On webTablesPage: search for user "daron26@hotmail.com"</name>
+                    <title>On webTablesPage: search for user "daron26@hotmail.com"</title>
+                    <attachments/>
+                    <steps>
+                        <step start='1761222427767' status='passed' stop='1761222428544'>
+                            <name>I fill field "//input[@id='searchBox']", "daron26@hotmail.com"</name>
+                            <title>I fill field "//input[@id='searchBox']", "daron26@hotmail.com"</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1761222428545' status='passed' stop='1761222428580'>
+                    <name>I wait number of visible elements "//div[@class='rt-tbody']/div[@class='rt-tr-group' and not(contains(@style, 'display: none')) and not(.//div[contains(@class, '-padRow')])]", 1, 10</name>
+                    <title>I wait number of visible elements "//div[@class='rt-tbody']/div[@class='rt-tr-group' and not(contains(@style, 'display: none')) and not(.//div[contains(@class, '-padRow')])]", 1, 10</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1761222428581' status='passed' stop='1761222428602'>
+                    <name>I wait for text "daron26@hotmail.com", 5, "//div[@class='rt-tbody']"</name>
+                    <title>I wait for text "daron26@hotmail.com", 5, "//div[@class='rt-tbody']"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1761222428604' status='passed' stop='1761222428617'>
+                    <name>On webTablesPage: count visible data rows</name>
+                    <title>On webTablesPage: count visible data rows</title>
+                    <attachments/>
+                    <steps>
+                        <step start='1761222428604' status='passed' stop='1761222428616'>
+                            <name>I wait for element "//div[@class='rt-tbody']/div[@class='rt-tr-group' and not(contains(@style, 'display: none')) and not(.//div[contains(@class, '-padRow')])]", 10</name>
+                            <title>I wait for element "//div[@class='rt-tbody']/div[@class='rt-tr-group' and not(contains(@style, 'display: none')) and not(.//div[contains(@class, '-padRow')])]", 10</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1761222428617' status='passed' stop='1761222428639'>
+                    <name>I grab number of visible elements "//div[@class='rt-tbody']/div[@class='rt-tr-group' and not(contains(@style, 'display: none')) and not(.//div[contains(@class, '-padRow')])]"</name>
+                    <title>I grab number of visible elements "//div[@class='rt-tbody']/div[@class='rt-tr-group' and not(contains(@style, 'display: none')) and not(.//div[contains(@class, '-padRow')])]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1761222428658' status='passed' stop='1761222428671'>
+                    <name>On webTablesPage: get user data by email "daron26@hotmail.com"</name>
+                    <title>On webTablesPage: get user data by email "daron26@hotmail.com"</title>
+                    <attachments/>
+                    <steps>
+                        <step start='1761222428658' status='passed' stop='1761222428671'>
+                            <name>I wait for element "//div[@class='rt-tr-group' and .//div[text()='daron26@hotmail.com']]", 10</name>
+                            <title>I wait for element "//div[@class='rt-tr-group' and .//div[text()='daron26@hotmail.com']]", 10</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1761222428671' status='passed' stop='1761222428690'>
+                    <name>I grab text from "//div[@class='rt-tr-group' and .//div[text()='daron26@hotmail.com']]//div[@class='rt-td'][1]"</name>
+                    <title>I grab text from "//div[@class='rt-tr-group' and .//div[text()='daron26@hotmail.com']]//div[@class='rt-td'][1]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1761222428690' status='passed' stop='1761222428712'>
+                    <name>I grab text from "//div[@class='rt-tr-group' and .//div[text()='daron26@hotmail.com']]//div[@class='rt-td'][2]"</name>
+                    <title>I grab text from "//div[@class='rt-tr-group' and .//div[text()='daron26@hotmail.com']]//div[@class='rt-td'][2]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1761222428712' status='passed' stop='1761222428735'>
+                    <name>I grab text from "//div[@class='rt-tr-group' and .//div[text()='daron26@hotmail.com']]//div[@class='rt-td'][3]"</name>
+                    <title>I grab text from "//div[@class='rt-tr-group' and .//div[text()='daron26@hotmail.com']]//div[@class='rt-td'][3]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1761222428736' status='passed' stop='1761222428757'>
+                    <name>I grab text from "//div[@class='rt-tr-group' and .//div[text()='daron26@hotmail.com']]//div[@class='rt-td'][4]"</name>
+                    <title>I grab text from "//div[@class='rt-tr-group' and .//div[text()='daron26@hotmail.com']]//div[@class='rt-td'][4]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1761222428757' status='passed' stop='1761222428781'>
+                    <name>I grab text from "//div[@class='rt-tr-group' and .//div[text()='daron26@hotmail.com']]//div[@class='rt-td'][5]"</name>
+                    <title>I grab text from "//div[@class='rt-tr-group' and .//div[text()='daron26@hotmail.com']]//div[@class='rt-td'][5]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1761222428782' status='passed' stop='1761222428803'>
+                    <name>I grab text from "//div[@class='rt-tr-group' and .//div[text()='daron26@hotmail.com']]//div[@class='rt-td'][6]"</name>
+                    <title>I grab text from "//div[@class='rt-tr-group' and .//div[text()='daron26@hotmail.com']]//div[@class='rt-td'][6]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

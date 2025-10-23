@@ -1,0 +1,160 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1761222545946' stop='1761222556456'>
+    <name>User Management:</name>
+    <title>User Management:</title>
+    <test-cases>
+        <test-case start='1761222545951' status='failed' stop='1761222555164'>
+            <name>Add a new user and search | {"firstName":"Richard","lastName":"Greenholt","email":"jamir.murazik@gmail.com","age":"24","salary":"9527","department":"Home"}</name>
+            <title>Add a new user and search | {"firstName":"Richard","lastName":"Greenholt","email":"jamir.murazik@gmail.com","age":"24","salary":"9527","department":"Home"}</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='codeceptjs'/>
+                <label name='tag' value='@gmail'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1761222547074' status='passed' stop='1761222553303'>
+                    <name>On webTablesPage: go to page</name>
+                    <title>On webTablesPage: go to page</title>
+                    <attachments/>
+                    <steps>
+                        <step start='1761222547074' status='passed' stop='1761222553299'>
+                            <name>I am on page "/webtables"</name>
+                            <title>I am on page "/webtables"</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1761222553303' status='passed' stop='1761222553373'>
+                    <name>On webTablesPage: open registration form</name>
+                    <title>On webTablesPage: open registration form</title>
+                    <attachments/>
+                    <steps>
+                        <step start='1761222553303' status='passed' stop='1761222553372'>
+                            <name>I wait for visible "//button[@id='addNewRecordButton']", 5</name>
+                            <title>I wait for visible "//button[@id='addNewRecordButton']", 5</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1761222553373' status='passed' stop='1761222553477'>
+                    <name>I click "//button[@id='addNewRecordButton']"</name>
+                    <title>I click "//button[@id='addNewRecordButton']"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1761222553479' status='passed' stop='1761222553686'>
+                    <name>On webTablesPage: fill registration form {"firstName":"Richard","lastName":"Greenholt","email":"jamir.murazik@gmail.com","age":"24","salary":"9527","department":"Home"}</name>
+                    <title>On webTablesPage: fill registration form {"firstName":"Richard","lastName":"Greenholt","email":"jamir.murazik@gmail.com","age":"24","salary":"9527","department":"Home"}</title>
+                    <attachments/>
+                    <steps>
+                        <step start='1761222553479' status='passed' stop='1761222553684'>
+                            <name>I fill field "//input[@id='firstName']", "Richard"</name>
+                            <title>I fill field "//input[@id='firstName']", "Richard"</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1761222553686' status='passed' stop='1761222553831'>
+                    <name>I fill field "//input[@id='lastName']", "Greenholt"</name>
+                    <title>I fill field "//input[@id='lastName']", "Greenholt"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1761222553833' status='passed' stop='1761222554040'>
+                    <name>I fill field "//input[@id='userEmail']", "jamir.murazik@gmail.com"</name>
+                    <title>I fill field "//input[@id='userEmail']", "jamir.murazik@gmail.com"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1761222554041' status='passed' stop='1761222554134'>
+                    <name>I fill field "//input[@id='age']", "24"</name>
+                    <title>I fill field "//input[@id='age']", "24"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1761222554135' status='passed' stop='1761222554224'>
+                    <name>I fill field "//input[@id='salary']", "9527"</name>
+                    <title>I fill field "//input[@id='salary']", "9527"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1761222554225' status='passed' stop='1761222554316'>
+                    <name>I fill field "//input[@id='department']", "Home"</name>
+                    <title>I fill field "//input[@id='department']", "Home"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1761222554318' status='passed' stop='1761222554408'>
+                    <name>On webTablesPage: submit form</name>
+                    <title>On webTablesPage: submit form</title>
+                    <attachments/>
+                    <steps>
+                        <step start='1761222554318' status='passed' stop='1761222554405'>
+                            <name>I click "//button[@id='submit']"</name>
+                            <title>I click "//button[@id='submit']"</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1761222554408' status='passed' stop='1761222555062'>
+                    <name>On webTablesPage: search for user "jamir.murazik@gmail.com"</name>
+                    <title>On webTablesPage: search for user "jamir.murazik@gmail.com"</title>
+                    <attachments/>
+                    <steps>
+                        <step start='1761222554408' status='passed' stop='1761222555061'>
+                            <name>I fill field "//input[@id='searchBox']", "jamir.murazik@gmail.com"</name>
+                            <title>I fill field "//input[@id='searchBox']", "jamir.murazik@gmail.com"</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1761222555062' status='passed' stop='1761222555089'>
+                    <name>I wait number of visible elements "//div[@class='rt-tbody']/div[@class='rt-tr-group' and not(contains(@style, 'display: none')) and not(.//div[contains(@class, '-padRow')])]", 1, 10</name>
+                    <title>I wait number of visible elements "//div[@class='rt-tbody']/div[@class='rt-tr-group' and not(contains(@style, 'display: none')) and not(.//div[contains(@class, '-padRow')])]", 1, 10</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1761222555090' status='passed' stop='1761222555118'>
+                    <name>I wait for text "jamir.murazik@gmail.com", 5, "//div[@class='rt-tbody']"</name>
+                    <title>I wait for text "jamir.murazik@gmail.com", 5, "//div[@class='rt-tbody']"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1761222555119' status='passed' stop='1761222555134'>
+                    <name>On webTablesPage: count visible data rows</name>
+                    <title>On webTablesPage: count visible data rows</title>
+                    <attachments/>
+                    <steps>
+                        <step start='1761222555120' status='passed' stop='1761222555133'>
+                            <name>I wait for element "//div[@class='rt-tbody']/div[@class='rt-tr-group' and not(contains(@style, 'display: none')) and not(.//div[contains(@class, '-padRow')])]", 10</name>
+                            <title>I wait for element "//div[@class='rt-tbody']/div[@class='rt-tr-group' and not(contains(@style, 'display: none')) and not(.//div[contains(@class, '-padRow')])]", 10</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1761222555134' status='passed' stop='1761222555158'>
+                    <name>I grab number of visible elements "//div[@class='rt-tbody']/div[@class='rt-tr-group' and not(contains(@style, 'display: none')) and not(.//div[contains(@class, '-padRow')])]"</name>
+                    <title>I grab number of visible elements "//div[@class='rt-tbody']/div[@class='rt-tr-group' and not(contains(@style, 'display: none')) and not(.//div[contains(@class, '-padRow')])]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments>
+                <attachment title='Main session - Last Seen Screenshot' source='c416be9a-f31f-47de-9428-73ae2e832ffe-attachment.png' type='image/png' size='317182'/>
+            </attachments>
+            <failure>
+                <message>Search should return only one row: expected 1 to equal +0</message>
+                <stack-trace>AssertionError: Search should return only one row: expected 1 to equal +0
+                    at Test.&lt;anonymous> (C:\Users\harri_projects\task6\tests\addingusers_test.js:16:40)
+                    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
