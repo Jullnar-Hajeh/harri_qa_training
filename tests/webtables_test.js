@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const UserData = require('../data/userData');
 
-Feature('Web Tables Full Suite');
+Feature('Web Tables');
 
 const testCases = [
     { title: 'adding new user' },
